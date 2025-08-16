@@ -1,9 +1,6 @@
 shader_type canvas_item;
 
 uniform sampler2D noise: repeat_enable, filter_nearest;
-uniform float speed: hint_range(0.0, 100.0, 1.0);
-uniform float opacity: hint_range(0.0, 1.0, 0.01);
-uniform float detail: hint_range(0.0, 1.0, 0.01);
 uniform float pixelation: hint_range(0.001, 10.0, 2.0);
 void fragment() {
 	float t = (TIME / 1000.0 * speed); // maybe no sin
@@ -22,14 +19,4 @@ void fragment() {
 	//COLOR = mix(color, vec4(1.0, 0.0, 0.0, 1.0), noise_color_at.r);
 	COLOR = color;
 	COLOR.r = noise_color_at.r;
-	
-	//if(COLOR.b > 0.6)
-	//{
-		//COLOR.rgb += COLOR.rgb * smoothstep(1.0 - detail, 1.0, noise_color_at.r) * opacity;	
-	//}
-	////COLOR.rgb += COLOR.rgb * ( smoothstep(0.1, 1.0, noise_color_at.r)) * 0.2;
-	//if(COLOR.a > 0.5 && COLOR.a < 1.0)
-	//{
-		//COLOR.a -= smoothstep(1.0 - detail, 1.0, noise_color_at.r) * opacity;
-	//}
 }
