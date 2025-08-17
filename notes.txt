@@ -1,0 +1,10 @@
+Let's start by figuring out what this effect is all about.
+The key concept in here is the image resolution.
+As you know, every picture consists of pixels, if you don't know this information, well.. i have bad news for you.
+The bigger the picture, the more pixels there are.
+Here I have a regular Godot icon and the one that is twice smaller.
+The smaller one has twice as less pixels as the regular one.
+And if we were to scale this small version up to match the size of the regular one, we would get the desired effect.
+
+And this is exactly what is happening.
+Let's get to the shader.
